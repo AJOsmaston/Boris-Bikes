@@ -7,5 +7,13 @@ describe DockingStation do
     bike = subject.release_bike 
       expect(bike).to be_working
     end
+
+  it { is_expected.to respond_to(:dock).with(1).argument }
+
+  # it 'allows a bike to be docked' do
+  #   bike = subject.release_bike
+  #   expect(subject.dock(bike)).to be_a Array
+  # end
+  
   end 
   
