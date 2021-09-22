@@ -20,12 +20,10 @@ describe DockingStation do
     expect{station.release_bike}.to raise_error "There are no bikes to release!"
   end
 
-  it 'throws and error if asked to dock a bike and a bike is already docked' do
-  station = DockingStation.new
-  # bike = Bike.new
-  # bike2 = Bike.new
-  station.dock(Bike.new)
-  expect{station.dock(Bike.new)}.to raise_error "Station full!"
+  it 'throws an error if asked to dock a bike and 20 bikes are already docked' do
+    station = DockingStation.new
+    20.times {station.dock(Bike.new)}
+    expect{station.dock(Bike.new)}.to raise_error "Station full!"
   end
 end 
   
