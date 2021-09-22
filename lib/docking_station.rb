@@ -5,14 +5,13 @@ class DockingStation
   attr_reader :bike
 
   def release_bike
-    if @bike == nil
-      raise StandardError.new "There are no bikes to release!"
-    else
-      Bike.new
-    end
+   fail "There are no bikes to release!" unless @bike
+    @bike 
   end
 
   def dock(bike)
+   fail "Station full!" if @bike 
     @bike = bike
-  end
+   end
+
 end
